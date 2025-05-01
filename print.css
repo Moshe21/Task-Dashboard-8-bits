@@ -1,0 +1,114 @@
+@media print {
+    /* Reset básico para impresión */
+    * {
+        background: transparent !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    /* Ocultar elementos no necesarios para impresión */
+    .no-print,
+    .add-task,
+    .navigation-menu,
+    .inspiration-section,
+    .task-item button {
+        display: none !important;
+    }
+
+    /* Ajustes del contenedor principal */
+    .dashboard {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Ajustes del reloj */
+    .clock-section {
+        text-align: center;
+        margin-bottom: 2cm;
+    }
+
+    #digital-clock {
+        font-size: 24pt;
+        margin-bottom: 0.5cm;
+    }
+
+    #weekday {
+        font-size: 16pt;
+    }
+
+    /* Ajustes de la cuadrícula de tareas */
+    .tasks-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1cm;
+        page-break-inside: avoid;
+    }
+
+    .task-day {
+        border: 1px solid #000;
+        padding: 1cm;
+        margin-bottom: 1cm;
+        page-break-inside: avoid;
+    }
+
+    .task-day h3 {
+        font-size: 18pt;
+        margin-bottom: 0.5cm;
+        border-bottom: 2px solid #000;
+        padding-bottom: 0.25cm;
+    }
+
+    /* Ajustes de las tareas */
+    .task-item {
+        padding: 0.25cm 0;
+        border-bottom: 1px solid #000;
+        margin-bottom: 0.25cm;
+        page-break-inside: avoid;
+    }
+
+    .task-item span {
+        font-size: 12pt;
+    }
+
+    /* Ajustes para tareas completadas */
+    .task-item span[style*="line-through"] {
+        text-decoration: line-through;
+    }
+
+    /* Ajustes de página */
+    @page {
+        margin: 2cm;
+        size: A4;
+    }
+
+    /* Asegurar que cada día comience en una nueva columna */
+    .task-day {
+        break-inside: avoid;
+    }
+
+    /* Ajustes del sidebar */
+    .sidebar {
+        display: none;
+    }
+
+    /* Estilo del título de la página */
+    body::before {
+        content: "Casos de Uso - Reporte Semanal";
+        display: block;
+        text-align: center;
+        font-size: 24pt;
+        font-weight: bold;
+        margin-bottom: 1cm;
+    }
+
+    /* Información de pie de página */
+    body::after {
+        content: "Generado el " attr(data-print-date);
+        display: block;
+        text-align: center;
+        font-size: 10pt;
+        margin-top: 1cm;
+    }
+}
