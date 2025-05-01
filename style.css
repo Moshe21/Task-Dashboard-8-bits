@@ -488,7 +488,7 @@
 /* Estilos para el calendario */
 .calendar-section {
     background: var(--card-bg);
-    border: 1px solid var(---green);
+    border: 1px solid var(--neon-green);
     border-radius: 8px;
     padding: 200px;
     margin-bottom: 2rem;
