@@ -488,10 +488,11 @@
 /* Estilos para el calendario */
 .calendar-section {
     background: var(--card-bg);
-    border: 1px solid var(--neon-green);
+    border: 1px solid var(---green);
     border-radius: 8px;
-    padding: 20px;
+    padding: 200px;
     margin-bottom: 2rem;
+    display: flex;
 }
 
 .calendar-grid {
